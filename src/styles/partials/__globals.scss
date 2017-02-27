@@ -1,0 +1,12 @@
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+	min-height:90vh;
+	#app{
+		width:500px;
+		max-width:90%;
+		padding-bottom:20px;
+	}
+}

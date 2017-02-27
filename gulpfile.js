@@ -4,6 +4,7 @@ const gulp = require('gulp'),
 	  proxy = require('http-proxy-middleware'),
 	  sass = require('gulp-sass'),
 	  babel = require('gulp-babel'),
+	  autoPrefix = require('gulp-autoprefixer')
 	  webpack = require('gulp-webpack');
 
 const paths = {
@@ -36,6 +37,7 @@ gulp.task('build:scripts',function(){
 gulp.task('build:styles',function(){
 	return gulp.src(paths.styles[0])
 		.pipe(sass().on('error',sass.logError))
+		.pipe(autoPrefix())
 		.pipe(gulp.dest('dist/styles'))
 		.pipe(connect.reload());
 });
