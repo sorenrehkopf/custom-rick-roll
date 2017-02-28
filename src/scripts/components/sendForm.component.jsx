@@ -31,11 +31,11 @@ class SendForm extends Component {
 			el = (
 				<form onSubmit={this.submitForm} className="form pure-form">
 					<fieldset className="pure-group">
-						<input className="pure-input-1" type="text" placeholder="Page Title" name="title" max="50" required="true"></input>
+						<input className="pure-input-1" type="text" placeholder="Page Title" name="title" maxLength="50" required="true"></input>
 						<BotCheck/>
-						<input className="pure-input-1" type="text" placeholder="Preview Image" name="image" max="500"  required="true"></input>
-						<textarea className="pure-input-1" type="text" placeholder="Custom message (optional)" name="message" max="250" rows="3"></textarea>
-						<textarea className="pure-input-1" type="text" placeholder="Page description" name="description" max="150" rows="5" required="true"></textarea>
+						<input className="pure-input-1" type="text" placeholder="Preview Image" name="image" required="true"></input>
+						<textarea className="pure-input-1" type="text" placeholder="Custom message (optional)" name="message" maxLength="250" rows="3"></textarea>
+						<textarea className="pure-input-1" type="text" placeholder="Page description" name="description" maxLength="150" rows="5" required="true"></textarea>
 					</fieldset>
 					<button className="pure-button pure-input-1 pure-button-primary" type="submit">Make it!</button>
 				</form>

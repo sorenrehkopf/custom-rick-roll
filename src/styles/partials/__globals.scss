@@ -4,12 +4,33 @@ body{
 	align-items:center;
 	flex-direction:column;
 	min-height:90vh;
+	background-image:url(../assets/rickastley.jpg);
+	background-size:cover;
+	background-attachment: fixed;
+	color:white;
 	#app{
-		width:500px;
-		max-width:90%;
+		max-width:90vw;
 		padding-bottom:20px;
+		min-width:60vw;
 	}
-
+	.app-container{
+		display:flex;
+		align-items:center;
+		width:100%;
+		justify-content:space-between;
+		flex-wrap:wrap;
+		padding:40px 10%;
+		box-sizing:border-box;
+		background-color:rgba(50,50,50,.8);
+		border-radius:5px;
+		&__instructions{
+			width:500px;
+			max-width:100%;
+			&--example{
+				width:100%;
+			}
+		}
+	}
 	.hidden{
 		width:0px;
 		height:0px;
