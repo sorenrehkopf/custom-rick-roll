@@ -10,6 +10,12 @@ class FormService {
 		return data;
 	};
 
+	static botCheck(el){
+		var input = el.querySelector('[name="botcheck"]');
+		console.log(input);
+		return input.value > 4999;
+	};
+
 }
 
 export default FormService;

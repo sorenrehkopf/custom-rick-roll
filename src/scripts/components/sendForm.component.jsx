@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
 import PageService from '../services/pageService.jsx';
-import FormService from '../services/formService.jsx'
+import FormService from '../services/formService.jsx';
+
+import BotCheck from './botCheck.component.jsx';
 
 class SendForm extends Component {
 
@@ -13,9 +15,14 @@ class SendForm extends Component {
 	submitForm(e){
 		e.preventDefault();
 		var data = FormService.getJSON(e.target);
-		console.log(data);
-		PageService.createPage(data)
-		.then(this.props.responseHandler);
+		if(FormService.botCheck(e.target)){
+			console.log(data);
+			PageService.createPage(data)
+			.then(this.props.responseHandler);
+		}else{
+			this.props.responseHandler("http://localhost:3000/index.html")
+		}
+		
 	}
 
 	render(){
@@ -25,6 +32,7 @@ class SendForm extends Component {
 				<form onSubmit={this.submitForm} className="form pure-form">
 					<fieldset className="pure-group">
 						<input className="pure-input-1" type="text" placeholder="Page Title" name="title" max="50" required="true"></input>
+						<BotCheck/>
 						<input className="pure-input-1" type="text" placeholder="Preview Image" name="image" max="500"  required="true"></input>
 						<textarea className="pure-input-1" type="text" placeholder="Custom message (optional)" name="message" max="250" rows="3"></textarea>
 						<textarea className="pure-input-1" type="text" placeholder="Page description" name="description" max="150" rows="5" required="true"></textarea>
