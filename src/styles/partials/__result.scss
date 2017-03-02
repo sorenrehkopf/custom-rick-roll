@@ -1,0 +1,14 @@
+.result{
+	color:white;
+	>div{
+		background-color:rgba(50,50,50,.7);
+		padding:8%;
+		border-radius:5px;
+		>button{
+			width:100%;
+		}
+	}
+	@media all and (max-width: 764px){
+		border-radius:0px;
+	}
+}

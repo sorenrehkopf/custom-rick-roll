@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import SendForm from './sendForm.component.jsx';
 import ResultDisplay from './resultDisplay.component.jsx';
 
+import FormService from '../services/formService.jsx';
+
 class Main extends Component {
 
 	constructor(){
@@ -14,6 +16,12 @@ class Main extends Component {
 		console.log(data);
 		this.responseUrl = data;
 		this.showForm = false;
+		this.forceUpdate();
+	}
+
+	reload(){
+		this.showForm = true;
+		this.responseUrl = false;
 		this.forceUpdate();
 	}
 
@@ -30,7 +38,7 @@ class Main extends Component {
 						<p><strong>Enjoy!</strong></p>
 					</div>
 					<SendForm responseHandler={this.responseHandler.bind(this)} showMe={this.showForm}/>
-					<ResultDisplay responseUrl={this.responseUrl} />
+					<ResultDisplay responseUrl={this.responseUrl} reload={this.reload.bind(this)}/>
 				</div>
 			)
 	}

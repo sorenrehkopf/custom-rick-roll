@@ -22,7 +22,6 @@ class SendForm extends Component {
 		}else{
 			this.props.responseHandler("http://localhost:3000/index.html")
 		}
-		
 	}
 
 	render(){

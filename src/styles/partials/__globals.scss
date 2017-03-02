@@ -3,31 +3,39 @@ body{
 	justify-content:center;
 	align-items:center;
 	flex-direction:column;
-	min-height:90vh;
-	background-image:url(../assets/rickastley.jpg);
-	background-size:cover;
-	background-attachment: fixed;
 	color:white;
 	#app{
-		max-width:90vw;
-		padding-bottom:20px;
-		min-width:60vw;
+		min-height:100vh;
+		width:100%;
 	}
 	.app-container{
-		display:flex;
-		align-items:center;
 		width:100%;
-		justify-content:space-between;
+		display:flex;
+		height:100vh;
+		align-items:center;
+		justify-content:center;
 		flex-wrap:wrap;
-		padding:40px 10%;
 		box-sizing:border-box;
 		background-color:rgba(50,50,50,.8);
 		border-radius:5px;
 		&__instructions{
-			width:500px;
+			flex:1;
 			max-width:100%;
+			height:100%;
+			background-color:black;
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items:flex-end;
+			padding:0px 5%;
+			box-sizing:border-box;
+			>*{
+				width:100%;
+
+			}
 			&--example{
 				width:100%;
+				align-self:flex-start;
 			}
 		}
 	}
@@ -35,5 +43,16 @@ body{
 		width:0px;
 		height:0px;
 		overflow:hidden;
+	}
+	@media all and (max-width: 768px){
+		.app-container{
+			flex-direction:column;
+			height:auto;
+			&__instructions{
+				padding:5%;
+				height:auto;
+				width:100%;
+			}
+		}
 	}
 }

@@ -1,5 +1,20 @@
 .form,.result{
- 	width:400px;
  	max-width:100%;
+ 	flex:1;
+ 	box-sizing:border-box;	
+ 	color:black;
+ 	padding:30px 5%;
+ 	height:100%;
+ 	display:flex;
+ 	flex-direction:column;
+ 	justify-content:center;
+	background-image:url(../assets/rickastley.jpg);
+	background-size:cover;
+	background-attachment: fixed;
 }
-
+@media all and (max-width: 768px){
+	.form,.result{
+		height:auto;
+		width:100%;
+	}
+}
