@@ -76,7 +76,7 @@ class SendForm extends Component {
 					<fieldset className="pure-group">
 						<input className="pure-input-1" type="text" placeholder="Page Title" name="title" maxLength="50" required="true"></input>
 						<BotCheck/>
-						<input id="img-input" className="pure-input-1" onInput={this.updateImgPreview.bind(this)} type="text" placeholder="Preview Image (choose from below)" name="image" required="true"></input>
+						<input id="img-input" className="pure-input-1" onInput={this.updateImgPreview.bind(this)} type="text" placeholder="Preview Image (paste url or choose below)" name="image" required="true"></input>
 						<div className="img-div">
 							{imgs}
 						</div>
