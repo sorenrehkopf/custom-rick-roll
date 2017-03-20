@@ -21687,7 +21687,7 @@
 					console.log(data);
 					_pageService2.default.createPage(data).then(this.props.responseHandler);
 				} else {
-					this.props.responseHandler("http://localhost:3000/index.html");
+					this.props.responseHandler("https://www.theraleighregister.com/index.html");
 				}
 			}
 		}, {
@@ -21784,7 +21784,8 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var apiUrls = {
-		'localhost': 'http://localhost:3000'
+		'localhost': 'http://localhost:3000',
+		'www.secretrickroll.com': 'https://www.theraleighregister.com'
 	};
 
 	var apiUrl = apiUrls[window.location.hostname];
