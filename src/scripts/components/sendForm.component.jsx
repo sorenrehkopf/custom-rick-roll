@@ -17,11 +17,11 @@ class SendForm extends Component {
 			selectedImg:0,
 			imgs:[
 				'',
-				'https://static.wixstatic.com/media/20cbca_574ab57d10944522ab504abe1a9ce8d4~mv2.jpg',
-				'http://www.pickmyturntable.com/wp-content/uploads/2015/03/dj-turntables-new-archives-music-and-radio-industry-news-and-infomation.jpg',
-				'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Lander_College_Old_Main_Building.jpg/640px-Lander_College_Old_Main_Building.jpg',
-				'https://southlincoln.dsbn.org/images/website-images/soccer.jpg',
-				'https://ae01.alicdn.com/kf/HTB12Ng9PXXXXXaaXFXXq6xXFXXXj/-font-b-400ml-b-font-Low-Form-font-b-Beaker-b-font-Chemistry-Laboratory-Borosilicate.jpg'
+				'opt1.jpg',
+				'opt2.jpg',
+				'opt3.jpg',
+				'opt4.jpg',
+				'opt5.jpg'
 			]
 		}
 	}
@@ -67,7 +67,8 @@ class SendForm extends Component {
 		if(this.props.showMe){
 			var imgs = this.state.imgs.map((img,i)=>{
 				var message = img?'':<span>Paste the url to your image to see the preview here!</span>;
-				return <div className={"img-div__img "+ (this.state.selectedImg === i?"selected":"")} style={{backgroundImage:"url("+img+")"}} key={i} onClick={this.chooseImg.bind(this,i)}>
+				return <div className={"img-div__img "+ (this.state.selectedImg === i?"selected":"")} style={{backgroundImage:"url("+
+					window.location.origin+"/assets/"+img+")"}} key={i} onClick={this.chooseImg.bind(this,i)}>
 					{message}
 				</div>
 			});
