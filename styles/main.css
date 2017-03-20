@@ -67,6 +67,25 @@ body {
     width: 0px;
     height: 0px;
     overflow: hidden; }
+  body .button-success,
+  body .button-error,
+  body .button-warning,
+  body .button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
+  body .button-success {
+    background: #1cb841;
+    /* this is a green */ }
+  body .button-error {
+    background: #ca3c3c;
+    /* this is a maroon */ }
+  body .button-warning {
+    background: #df7514;
+    /* this is an orange */ }
+  body .button-secondary {
+    background: #42b8dd;
+    /* this is a light blue */ }
   @media all and (max-width: 768px) {
     body .app-container {
       -webkit-box-orient: vertical;
@@ -145,6 +164,14 @@ body {
     border-radius: 5px; }
     .result > div > button {
       width: 100%; }
+  .result__show {
+    color: #cdcd88; }
+  .result__input {
+    color: black;
+    width: 100%;
+    padding: 5px; }
+  .result__copy-btn {
+    margin-bottom: 5px; }
   @media all and (max-width: 764px) {
     .result {
       border-radius: 0px; } }

@@ -21533,24 +21533,28 @@
 
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
 
-			_this.showForm = true;
+			_this.state = {
+				showForm: false,
+				responseUrl: 'https://www.theraleighregister.com'
+			};
 			return _this;
 		}
 
 		_createClass(Main, [{
 			key: 'responseHandler',
 			value: function responseHandler(data) {
-				console.log(data);
-				this.responseUrl = data;
-				this.showForm = false;
-				this.forceUpdate();
+				this.setState({
+					responseUrl: data,
+					showForm: false
+				});
 			}
 		}, {
 			key: 'reload',
 			value: function reload() {
-				this.showForm = true;
-				this.responseUrl = false;
-				this.forceUpdate();
+				this.setState({
+					responseUrl: false,
+					showForm: true
+				});
 			}
 		}, {
 			key: 'render',
@@ -21612,8 +21616,8 @@
 							)
 						)
 					),
-					_react2.default.createElement(_sendFormComponent2.default, { responseHandler: this.responseHandler.bind(this), showMe: this.showForm }),
-					_react2.default.createElement(_resultDisplayComponent2.default, { responseUrl: this.responseUrl, reload: this.reload.bind(this) })
+					_react2.default.createElement(_sendFormComponent2.default, { responseHandler: this.responseHandler.bind(this), showMe: this.state.showForm }),
+					_react2.default.createElement(_resultDisplayComponent2.default, { responseUrl: this.state.responseUrl, reload: this.reload.bind(this) })
 				);
 			}
 		}]);
@@ -21959,6 +21963,11 @@
 		}
 
 		_createClass(ResultDisplay, [{
+			key: "preventDefault",
+			value: function preventDefault(e) {
+				e.preventDefault();
+			}
+		}, {
 			key: "render",
 			value: function render() {
 				var el = null;
@@ -21974,13 +21983,14 @@
 								null,
 								"Here's your link!"
 							),
+							_react2.default.createElement("input", { className: "result__input pure-input-1", type: "text", value: this.props.responseUrl, onInput: this.preventDefault }),
 							_react2.default.createElement(
 								"a",
-								{ href: this.props.responseUrl, target: "_blank" },
+								{ href: this.props.responseUrl, target: "_blank", className: "result__show" },
 								_react2.default.createElement(
-									"h3",
+									"h4",
 									null,
-									this.props.responseUrl
+									"Visit it here!"
 								)
 							),
 							_react2.default.createElement(
