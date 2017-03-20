@@ -49,14 +49,15 @@ class SendForm extends Component {
 			var imgs = thiz.state.imgs;
 			imgs[0] = imgInput.value;
 			thiz.setState({
-				imgs:imgs
+				imgs:imgs,
+				selectedImg:0
 			});
 		},1000);
 	}
 
 	chooseImg(i){
-		console.log(i);
-		imgInput.value = this.state.imgs[i];
+		var url = i?window.location.origin+"/assets/"+this.state.imgs[i]:this.state.imgs[i];
+		imgInput.value = url;
 		this.setState({
 			selectedImg:i
 		});
@@ -67,8 +68,11 @@ class SendForm extends Component {
 		if(this.props.showMe){
 			var imgs = this.state.imgs.map((img,i)=>{
 				var message = img?'':<span>Paste the url to your image to see the preview here!</span>;
-				return <div className={"img-div__img "+ (this.state.selectedImg === i?"selected":"")} style={{backgroundImage:"url("+
-					window.location.origin+"/assets/"+img+")"}} key={i} onClick={this.chooseImg.bind(this,i)}>
+				var img = i?window.location.origin+"/assets/"+img:img;
+				var style = {
+					backgroundImage:"url("+img+")"
+				}
+				return <div className={"img-div__img "+ (this.state.selectedImg === i?"selected":"")} style={style} key={i} onClick={this.chooseImg.bind(this,i)}>
 					{message}
 				</div>
 			});
