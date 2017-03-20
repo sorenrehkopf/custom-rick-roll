@@ -30,12 +30,15 @@ class SendForm extends Component {
 		e.preventDefault();
 		var data = FormService.getJSON(e.target);
 		if(FormService.botCheck(e.target)){
-			console.log(data);
 			PageService.createPage(data)
 			.then(this.props.responseHandler);
 		}else{
 			this.props.responseHandler("http://localhost:3000/index.html")
 		}
+	}
+
+	componentDidUpdate(){
+		imgInput = document.getElementById('img-input');
 	}
 
 	componentDidMount(){

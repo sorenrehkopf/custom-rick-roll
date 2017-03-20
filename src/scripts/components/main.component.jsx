@@ -10,8 +10,8 @@ class Main extends Component {
 	constructor(){
 		super();
 		this.state = {
-			showForm:false,
-			responseUrl:'https://www.theraleighregister.com'
+			showForm:true,
+			responseUrl:false
 		};
 	}
 
@@ -26,7 +26,7 @@ class Main extends Component {
 		this.setState({
 			responseUrl:false,
 			showForm:true
-		})
+		});
 	}
 
 	render(){
