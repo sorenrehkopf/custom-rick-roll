@@ -21534,8 +21534,8 @@
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
 
 			_this.state = {
-				showForm: false,
-				responseUrl: 'https://www.theraleighregister.com'
+				showForm: true,
+				responseUrl: false
 			};
 			return _this;
 		}
@@ -21688,11 +21688,15 @@
 				e.preventDefault();
 				var data = _formService2.default.getJSON(e.target);
 				if (_formService2.default.botCheck(e.target)) {
-					console.log(data);
 					_pageService2.default.createPage(data).then(this.props.responseHandler);
 				} else {
 					this.props.responseHandler("https://www.theraleighregister.com/index.html");
 				}
+			}
+		}, {
+			key: 'componentDidUpdate',
+			value: function componentDidUpdate() {
+				imgInput = document.getElementById('img-input');
 			}
 		}, {
 			key: 'componentDidMount',
@@ -21983,7 +21987,7 @@
 								null,
 								"Here's your link!"
 							),
-							_react2.default.createElement("input", { className: "result__input pure-input-1", type: "text", value: this.props.responseUrl, onInput: this.preventDefault }),
+							_react2.default.createElement("input", { className: "result__input pure-input-1", type: "text", value: this.props.responseUrl, onInput: this.preventDefault, onChange: this.preventDefault }),
 							_react2.default.createElement(
 								"a",
 								{ href: this.props.responseUrl, target: "_blank", className: "result__show" },
