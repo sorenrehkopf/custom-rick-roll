@@ -21704,15 +21704,16 @@
 					var imgs = thiz.state.imgs;
 					imgs[0] = imgInput.value;
 					thiz.setState({
-						imgs: imgs
+						imgs: imgs,
+						selectedImg: 0
 					});
 				}, 1000);
 			}
 		}, {
 			key: 'chooseImg',
 			value: function chooseImg(i) {
-				console.log(i);
-				imgInput.value = this.state.imgs[i];
+				var url = i ? window.location.origin + "/assets/" + this.state.imgs[i] : this.state.imgs[i];
+				imgInput.value = url;
 				this.setState({
 					selectedImg: i
 				});
@@ -21730,9 +21731,13 @@
 							null,
 							'Paste the url to your image to see the preview here!'
 						);
+						var img = i ? window.location.origin + "/assets/" + img : img;
+						var style = {
+							backgroundImage: "url(" + img + ")"
+						};
 						return _react2.default.createElement(
 							'div',
-							{ className: "img-div__img " + (_this2.state.selectedImg === i ? "selected" : ""), style: { backgroundImage: "url(" + window.location.origin + "/assets/" + img + ")" }, key: i, onClick: _this2.chooseImg.bind(_this2, i) },
+							{ className: "img-div__img " + (_this2.state.selectedImg === i ? "selected" : ""), style: style, key: i, onClick: _this2.chooseImg.bind(_this2, i) },
 							message
 						);
 					});
