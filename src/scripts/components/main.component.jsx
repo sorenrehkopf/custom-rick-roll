@@ -9,20 +9,24 @@ class Main extends Component {
 
 	constructor(){
 		super();
-		this.showForm = true;
+		this.state = {
+			showForm:false,
+			responseUrl:'https://www.theraleighregister.com'
+		};
 	}
 
 	responseHandler(data){
-		console.log(data);
-		this.responseUrl = data;
-		this.showForm = false;
-		this.forceUpdate();
+		this.setState({
+			responseUrl:data,
+			showForm:false
+		})
 	}
 
 	reload(){
-		this.showForm = true;
-		this.responseUrl = false;
-		this.forceUpdate();
+		this.setState({
+			responseUrl:false,
+			showForm:true
+		})
 	}
 
 	render(){
@@ -37,8 +41,8 @@ class Main extends Component {
 						<p>You can even add a brief message to display to your victim while they are reminded that they "wouldn&#39;t get this from any other guy."</p>
 						<p><strong>Enjoy!</strong></p>
 					</div>
-					<SendForm responseHandler={this.responseHandler.bind(this)} showMe={this.showForm}/>
-					<ResultDisplay responseUrl={this.responseUrl} reload={this.reload.bind(this)}/>
+					<SendForm responseHandler={this.responseHandler.bind(this)} showMe={this.state.showForm}/>
+					<ResultDisplay responseUrl={this.state.responseUrl} reload={this.reload.bind(this)}/>
 				</div>
 			)
 	}
