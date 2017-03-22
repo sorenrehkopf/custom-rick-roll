@@ -21763,8 +21763,22 @@
 								{ className: 'img-div' },
 								imgs
 							),
+							_react2.default.createElement('textarea', { className: 'pure-input-1', type: 'text', placeholder: 'Page description', name: 'description', maxLength: '150', rows: '5', required: 'true' }),
 							_react2.default.createElement('textarea', { className: 'pure-input-1', type: 'text', placeholder: 'Custom message (optional)', name: 'message', maxLength: '250', rows: '3' }),
-							_react2.default.createElement('textarea', { className: 'pure-input-1', type: 'text', placeholder: 'Page description', name: 'description', maxLength: '150', rows: '5', required: 'true' })
+							_react2.default.createElement(
+								'select',
+								{ className: 'pure-input-1 select', name: 'source', defaultValue: 'https://www.thisworldthesedays.com' },
+								_react2.default.createElement(
+									'option',
+									{ value: 'https://www.thisworldthesedays.com' },
+									'From: A trendy current events and culture blog.'
+								),
+								_react2.default.createElement(
+									'option',
+									{ value: 'https://www.theraleighregister.com' },
+									'From: A lesser know yet respected regional paper.'
+								)
+							)
 						),
 						_react2.default.createElement(
 							'button',

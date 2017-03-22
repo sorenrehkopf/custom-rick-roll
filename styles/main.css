@@ -148,6 +148,8 @@ body {
       .form .img-div__img.selected, .result .img-div__img.selected {
         border: 2px solid blue;
         height: calc(100% - 5px); }
+  .form .select, .result .select {
+    height: auto; }
 
 @media all and (max-width: 768px) {
   .form, .result {
