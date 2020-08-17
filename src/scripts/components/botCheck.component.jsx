@@ -13,7 +13,7 @@ class BotCheck extends Component{
 	}
 
 	render(){
-		if(this.val < 5000) setTimeout(this.updateVal.bind(this),1000);
+		if(this.val < 3000) setTimeout(this.updateVal.bind(this),1000);
 		return(
 			<input className="hidden" name="botcheck" value={this.val} />
 		)

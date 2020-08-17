@@ -13,7 +13,7 @@ class FormService {
 	static botCheck(el){
 		var input = el.querySelector('[name="botcheck"]');
 		console.log(input);
-		return input.value > 4999;
+		return input.value > 2999;
 	};
 
 }
