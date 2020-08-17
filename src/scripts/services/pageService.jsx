@@ -1,5 +1,6 @@
 var apiUrls = {
-	'localhost':'http://localhost:3000'
+	'localhost':'http://localhost:3000',
+	'www.secretrickroll.com':'https://www.theraleighregister.com'
 };
 
 var apiUrl = apiUrls[window.location.hostname];
@@ -8,7 +9,6 @@ class PageService {
 
 	static createPage(content){
 		return new Promise(function(resolve,reject){
-			console.log(apiUrl)
 			var http = new XMLHttpRequest();
 			http.open(
 				'POST',
