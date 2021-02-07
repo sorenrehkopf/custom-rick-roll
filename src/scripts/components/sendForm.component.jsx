@@ -90,7 +90,7 @@ class SendForm extends Component {
 						</div>
 						<textarea className="pure-input-1" type="text" placeholder="Page description" name="description" maxLength="150" rows="5" required="true"></textarea>
 						<textarea className="pure-input-1" type="text" placeholder="Custom message (optional)" name="message" maxLength="250" rows="3"></textarea>
-						<textarea className="pure-input-1" type="text" placeholder="Custom message page name (optional)" name="pagename" maxLength="50"></textarea>
+						<input className="pure-input-1" type="text" placeholder="File Name (optional) (ie. site.com/url-path.html) (defaults to page title)" name="pagename" maxLength="50"></input>
 						<select className="pure-input-1 select" name="source" defaultValue="https://www.thisworldthesedays.com">
 							<option value="https://www.thisworldthesedays.com">From: A trendy current events and culture blog.</option>
 							<option value="https://www.theraleighregister.com">From: A lesser know yet respected regional paper.</option>
