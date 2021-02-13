@@ -31,7 +31,7 @@
     "gulp-shell": "^0.5.2",
     "gulp-webpack": "^1.5.0",
     "http-proxy-middleware": "^0.17.2",
-    "serve": "^1.4.0",
+    "serve": "^10.1.2",
     "webpack": "^1.13.2"
   },
   "bugs": {
