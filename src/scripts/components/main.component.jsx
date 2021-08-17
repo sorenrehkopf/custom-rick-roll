@@ -10,8 +10,8 @@ class Main extends Component {
 	constructor(){
 		super();
 		this.state = {
-			showForm:false,
-			responseUrl:"url.com"
+			showForm:true,
+			responseUrl:false
 		};
 	}
 
