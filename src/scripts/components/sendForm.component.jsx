@@ -1,4 +1,4 @@
-import React, {Component from 'react';
+import React, { Component } from 'react';
 
 import PageService from '../services/pageService.jsx';
 import FormService from '../services/formService.jsx';
@@ -98,7 +98,7 @@ class SendForm extends Component {
 					</fieldset>
 					<button className="pure-button pure-input-1 pure-button-primary" type="submit">Make it!</button>
 				</form>
-			);	
+			);
 		}
 		return el;
 	}

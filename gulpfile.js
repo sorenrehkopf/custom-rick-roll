@@ -2,7 +2,7 @@ const gulp = require('gulp'),
 	  connect = require('gulp-connect'),
 	  shell = require('gulp-shell'),
 	  proxy = require('http-proxy-middleware'),
-	  sass = require('gulp-sass'),
+	  sass = require('gulp-sass')(require('sass')),
 	  babel = require('gulp-babel'),
 	  autoPrefix = require('gulp-autoprefixer')
 	  webpack = require('gulp-webpack');
@@ -12,10 +12,6 @@ const paths = {
 	styles:['src/styles/main.scss','src/styles/**/*.scss'],
 	assets:['src/assets/**/*.*']
 }
-
-gulp.task('start',['build','watch','serve']);
-gulp.task('build',['build:scripts','build:styles','copy:assets']);
-gulp.task('watch',['watch:scripts','watch:styles','watch:assets']);
 
 gulp.task('serve',function(){
 	connect.server({
@@ -50,13 +46,17 @@ gulp.task('copy:assets',function(){
 });
 
 gulp.task('watch:scripts',function(){
-	gulp.watch(paths.scripts,['build:scripts']);
+	gulp.watch(paths.scripts, gulp.series('build:scripts'));
 });
 
 gulp.task('watch:styles',function(){
-	gulp.watch(paths.styles,['build:styles']);
+	gulp.watch(paths.styles,gulp.series('build:styles'));
 });
 
 gulp.task('watch:assets',function(){
-	gulp.watch(paths.assets,['copy:assets']);
+	gulp.watch(paths.assets,gulp.series('copy:assets'));
 });
+
+gulp.task('build',gulp.parallel('build:scripts','build:styles','copy:assets'));
+gulp.task('watch',gulp.parallel('watch:scripts','watch:styles','watch:assets'));
+gulp.task('start',gulp.series('build', gulp.parallel('watch','serve')));

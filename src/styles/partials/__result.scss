@@ -19,6 +19,26 @@
 	&__copy-btn{
 		margin-bottom:5px;
 	}
+
+	&__support-cta {
+		width: 100%;
+		display: block;
+		margin-bottom: 10px;
+		text-decoration: none;
+
+		button {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		img {
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+	}
+
 	@media all and (max-width: 764px){
 		border-radius:0px;
 	}
