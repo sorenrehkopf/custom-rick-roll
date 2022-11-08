@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
-    "babel-loader": "^6.2.5",
+    "babel-loader": "^9.1.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "gulp": "^4.0.2",
@@ -35,7 +35,7 @@
     "http-proxy-middleware": "^0.17.2",
     "sass": "^1.38.0",
     "serve": "^1.4.0",
-    "webpack": "^1.13.2"
+    "webpack": "^5.74.0"
   },
   "bugs": {
     "url": "https://github.com/sorenrehkopf/custom-rick-roll/issues"
